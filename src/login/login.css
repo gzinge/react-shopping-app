@@ -1,0 +1,37 @@
+.continerBox{
+    width: 700px;
+    height: 350px;
+    overflow: hidden;
+    margin: 200px auto 50px;
+    border-style: solid;
+}
+.titleAuth{
+  font-size: 25px;
+  font-style: bold;
+}
+.leftBox{
+    width: 300px;
+    height: 480px;
+    float: left;
+}
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    
+  }
+
+  img.avatar {
+    width: 50%;
+    border-radius: 70%;
+    margin: 80px;
+  }
+  
+.rightBox{
+  width: 904px;
+  margin: -300px 380px;
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  min-width: 200px;
+    
+}
