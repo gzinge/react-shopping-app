@@ -1,8 +1,8 @@
-const proxy = require("http-proxy-middleware");
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function(app){
-    aap.use(
-        proxy("/user",{
+    app.use(
+        createProxyMiddleware("/user",{
             target:"http://localhost:58009",
             changeOrigin:true
         })
