@@ -3,6 +3,8 @@ import './login.css';
 import loginImage from '../image/loginUser.png';
 import {Button, Grid,InputAdornment,TextField} from "@material-ui/core";
 import {AccountCircle,LockRounded} from "@material-ui/icons";
+import axios from 'axios';
+import SignIn from './signup';
 
 class Login extends React.Component{
 
@@ -29,14 +31,23 @@ class Login extends React.Component{
         console.log("Username: ",this.state.username);
         console.log("Password:",this.state.password);
 
-        fetch('http://localhost:58009/user/all',{
-            mode: 'no-cors'
-        })
-        .then((data) => {
-          console.log(data);
-        })
-        .catch(console.log)
-              
+        const body = {
+            email: this.state.username,
+            password: this.state.password
+        }
+
+        axios.post("/user/validateUser",body)
+            .then(response =>{
+                if(response.data){
+                    alert("Login Successful.!!")
+                    console.log("Response: ",response.data)
+                }else{
+                    alert("username/password is incorrect")
+                }
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            })
     }
 
 
@@ -68,8 +79,10 @@ class Login extends React.Component{
                                 Forgot Password?
                             </Button>
                         </Grid>
-
-                    </div>                
+                    <div>
+                       <span>Don't have account? <a href ="">SignUp</a></span>
+                    </div>    
+                    </div>          
                </Grid>
            </div>
         )}
