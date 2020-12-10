@@ -38,7 +38,7 @@ class  Home extends React.Component{
                     <div className='card-image'>
                         <img src={menuOption.image} alt={menuOption.text}/>
                     </div>
-                    <ul>
+                    <ul className='card-title'>
                         <li><Link to={menuOption.link}>{menuOption.text}</Link></li>
                     </ul>
                 </div>

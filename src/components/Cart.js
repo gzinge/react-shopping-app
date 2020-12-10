@@ -61,6 +61,12 @@ class Cart extends React.Component{
                     <ul className='collection'>
                         {addedItems}
                     </ul>
+
+                    <ul className="right">
+                        <li><Link to="/login"><button className="order">Confirm Order</button></Link></li>
+                    </ul>
+
+
                 </div>
 
             </div>

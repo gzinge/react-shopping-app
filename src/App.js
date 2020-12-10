@@ -6,6 +6,7 @@ import ItemList from './components/ItemList';
 import Home from './home/Home'
 import Cart from './components/Cart'
 import Navbar from "./home/Navbar";
+import AddProducts from "./components/AddProducts";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                       <Route path="/Catagory" component={ItemList} />
                       <Route path = "/login" component={Login}/>
                       <Route path = "/cart" component={Cart}/>
+                      <Route path ="/admin" component={AddProducts}/>
                   </Switch>
               </div>
 
